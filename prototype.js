@@ -10,6 +10,7 @@ $("#myTags").tagit({
     allowDuplicates: false,
     allowSpaces: false,
     readOnly: false,
+    removeOnly: false,
     tagLimit: null,
     singleField: false,
     singleFieldDelimiter: ',',

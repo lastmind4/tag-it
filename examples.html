@@ -111,6 +111,13 @@
             });
 
             //-------------------------------
+            // Remove-only
+            //-------------------------------
+            $('#removeOnlyTags').tagit({
+                removeOnly: true
+            });
+
+            //-------------------------------
             // Tag-it methods
             //-------------------------------
             $('#methodTags').tagit({
@@ -216,6 +223,17 @@
         <form>
             <p>Example of read only tags.</p>
             <ul id="readOnlyTags">
+                <li>Tag1</li>
+                <li>Tag2</li>
+            </ul>
+        </form>
+
+        <hr>
+
+        <h3>Remove-only</h3>
+        <form>
+            <p>Example of remove only tags.</p>
+            <ul id="removeOnlyTags">
                 <li>Tag1</li>
                 <li>Tag2</li>
             </ul>

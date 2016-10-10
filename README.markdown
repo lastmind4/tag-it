@@ -130,6 +130,12 @@ When enabled, tag-it just render tags. It disables the ability to edit tags.
 
 Defaults to *false*.
 
+### removeOnly (boolean)
+
+When enabled, tag-it disables the ability to add tags, only removing of tags is allowed.
+
+Defaults to *false*.
+
 ### tagLimit (integer)
 
 Limits the total number of tags that can be entered at once. Note that if you use this option with preloaded data,

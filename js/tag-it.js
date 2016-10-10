@@ -33,6 +33,7 @@
             fieldName         : 'tags',
             placeholderText   : null,   // Sets `placeholder` attr on input field.
             readOnly          : false,  // Disables editing.
+            removeOnly        : false,  // Disables adding tags, only removing is allowed.
             removeConfirmation: false,  // Require confirmation to remove tags.
             tagLimit          : null,   // Max number of tags allowed (null for unlimited).
 
@@ -126,7 +127,7 @@
 
             this.tagInput = $('<input type="text" />').addClass('ui-widget-content');
 
-            if (this.options.readOnly) this.tagInput.attr('disabled', 'disabled');
+            if (this.options.readOnly || this.options.removeOnly) this.tagInput.attr('disabled', 'disabled');
 
             if (this.options.tabIndex) {
                 this.tagInput.attr('tabindex', this.options.tabIndex);
