@@ -397,6 +397,11 @@
             return result;
         },
 
+        tagDataId: function(tag) {
+            // Returns the tag's value of attr 'dataId'.
+            return $(tag).find('.tagit-label:first').attr('dataId');
+        },
+
         tagLabel: function(tag) {
             // Returns the tag's string label.
             if (this.options.singleField) {
@@ -437,7 +442,11 @@
             return Boolean($.effects && ($.effects[name] || ($.effects.effect && $.effects.effect[name])));
         },
 
-        createTag: function(value, additionalClass, duringInitialization) {
+        createTagWithData: function(value, dataId, titleStr) {
+            return this.createTag(value, null, false, dataId, titleStr);
+        },
+
+        createTag: function(value, additionalClass, duringInitialization, dataId, titleStr) {
             var that = this;
 
             value = $.trim(value);
@@ -468,7 +477,10 @@
                 return false;
             }
 
-            var label = $(this.options.onTagClicked ? '<a class="tagit-label"></a>' : '<span class="tagit-label"></span>').text(value);
+            var dataAttr = dataId ? ' dataId="' + dataId + '"' : '';
+            var titleAttr = titleStr ? ' title="' + titleStr + '"' : '';
+            var additionalAttrs = dataAttr + titleAttr;
+            var label = $(this.options.onTagClicked ? '<a class="tagit-label"'+additionalAttrs+'></a>' : '<span class="tagit-label"'+additionalAttrs+'></span>').text(value);
 
             // Create tag.
             var tag = $('<li></li>')
